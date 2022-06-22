@@ -43,9 +43,9 @@ ultimately, this version of the program does exactly what i wanted it to do, i'm
 
 ### how do it use it
 
-`git clone https://github.com/okosuno/steamconcurrent.git`
-`cd steamconcurrent`
-`python main_temp.py --help`
+`git clone https://github.com/okosuno/steamconcurrent.git`  
+`cd steamconcurrent`  
+`python main_temp.py --help`  
 
 1. you'll likely want to run `--setup` first
 2. and then start adding games with `--name [query]`
