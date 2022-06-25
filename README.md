@@ -7,6 +7,8 @@
 </br>terminal display</br></br>
 <img src="https://imgur.com/pACwQDO.png"/>
 </br>list view</br></br> 
+<img src="https://i.imgur.com/PGujgpc.png"/>
+</br>config prompt</br></br>
 </p>
 
 ### what it does
