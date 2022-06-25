@@ -6,9 +6,9 @@ import os
 import yaml
 import math
 import textwrap
-import traceback
 from rich import print as rprint
 from rich.text import Text
+from rich.prompt import Confirm
 from searches import fuzzy_search
 from data_proc import *
 from datetime import datetime
@@ -267,6 +267,18 @@ class Game:
         
         games_yaml.pop(self.entryid)
 
+        # remove historical data
+        select = Confirm.ask("[yellow]would you like to remove ALL historical data tracked for this item? ", \
+                    default=False)
+
+        if not select:
+            rprint("[yellow]you can change this later by adding the game again and removing it the same way...")
+        else: 
+            conn, cur = open_hist_db_conn(self.path)
+            cur.execute("DELETE FROM historical_data WHERE appid = ?;", (self.appid, ) )
+            conn.commit()
+            conn.close()
+            
         with open(self.path + 'data/games.yaml','w') as f:
             yaml.safe_dump(games_yaml,f)
 
