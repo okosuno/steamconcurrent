@@ -43,5 +43,10 @@ class Tests(unittest.TestCase):
         result = remove_game(PATH, query=400)
         self.assertTrue(result)
 
+    # STEAM STATUS CHECK
+    def test_steam_status_check(self):
+        result = steam_status_check(3)
+        self.assertTrue(result)
+
 if __name__ == "__main__":
     unittest.main()
